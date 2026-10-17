@@ -53,6 +53,8 @@ loader.load('/images/logo.jpg', (texture) => {
 
     right.rotation.x = -current.y * 0.3
     right.rotation.y = current.x * 0.3
+    right.position.x = 1 + current.x * 0.3
+    right.position.y = current.y * 0.3
 
     renderer.render(scene, camera)
     requestAnimationFrame(tick)
