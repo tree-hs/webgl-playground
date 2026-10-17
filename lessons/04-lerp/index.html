@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 · Lerp</title>
+    <style>
+      body { margin: 0; background: #111; color: #aaa; font-family: system-ui, sans-serif; }
+      canvas { display: block; }
+      .label { position: fixed; bottom: 32px; width: 50%; text-align: center; font-size: 14px; pointer-events: none; }
+      .left { left: 0; }
+      .right { right: 0; }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <div class="label left">3단계 방식 (바로 따라감)</div>
+    <div class="label right">Lerp (부드럽게 따라감)</div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
