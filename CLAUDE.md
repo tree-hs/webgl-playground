@@ -41,8 +41,8 @@ Three.js / WebGL / GLSL을 처음 배우면서, Awwwards 스타일의 "이미지
 | 4 | `04-lerp` | Lerp (목표 vs 현재 분리), 위치 따라오기 | 완료 |
 | 5-1 | `05-shader-basics` | ShaderMaterial, gl_FragColor, vUv, 좌우 색 나누기 | 완료 |
 | 5-2 | `05b-shader-texture` | uniform, texture2D, uv 비틀기, 흑백 | 완료 |
-| 6 | `06-distortion` | uniform 매 프레임 갱신(uTime), sin 물결 왜곡 | **진행 중**: 실험 1~5와 직접 작성(마우스 거리로 물결 세기 uStrength 조절, Math.abs 사용) 남음 |
-| 7 | — | 실무 정리: 리사이즈, PixelRatio 제한, dispose, 구조화. reference와 비교 | 예정 |
+| 6 | `06-distortion` | uniform 매 프레임 갱신(uTime), sin 물결 왜곡, 마우스 거리로 세기(uStrength) | 완료 |
+| 7 | — | 실무 정리: 리사이즈, PixelRatio 제한, dispose, 구조화. reference와 비교 | **다음 차례** |
 
 새 세션을 시작하면 이 표와 `lessons/` 폴더를 보고 어디까지 했는지 확인한 뒤 이어서 진행한다. 단계를 마치면 이 표의 상태를 갱신한다.
 

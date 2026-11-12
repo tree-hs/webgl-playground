@@ -32,6 +32,7 @@ const vertexShader = /* glsl */ `
 const fragmentShader = /* glsl */ `
   uniform sampler2D uTexture;
   uniform float uTime; // 자바스크립트가 매 프레임 넣어주는 "지금 시간(초)"
+  uniform float uStrength;
 
   varying vec2 vUv;
 
@@ -41,7 +42,8 @@ const fragmentShader = /* glsl */ `
 
     // 물결: 높이(uv.y)에 따라 가로 위치(uv.x)를 sin으로 살짝 밀어준다
     //   sin( 높이 * 촘촘함 + 시간 ) * 세기
-    uv.x += sin(uv.y * 10.0 + uTime) * 0.02;
+    //uv.y += sin(uv.x * 10.0 + uTime * 5.0) * 0.1;
+    uv.y += sin(uv.x * 10.0 + uTime * 5.0) * uStrength * 0.1;
 
     // 비튼 위치(uv)에서 사진 색을 가져온다
     gl_FragColor = texture2D(uTexture, uv);
@@ -60,6 +62,7 @@ loader.load('/images/logo.jpg', (texture) => {
     uniforms: {
       uTexture: { value: texture },
       uTime: { value: 0 },
+      uStrength: { value: 0 },
     },
   })
 
@@ -72,7 +75,7 @@ loader.load('/images/logo.jpg', (texture) => {
 
     // 매 프레임 셰이더에게 "지금 시간"을 보내준다
     material.uniforms.uTime.value = time / 1000
-
+    material.uniforms.uStrength.value = Math.abs(current.x)
     renderer.render(scene, camera)
     requestAnimationFrame(tick)
   }
